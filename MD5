@@ -1,0 +1,17 @@
+0137c8dbc73a2369dc87df6c39e86813 *DESCRIPTION
+c302290b0fc3b0967fe77bd945189455 *NAMESPACE
+1e1ee44aacbf284b12660f1811f4f264 *NEWS
+bdbdbe06e14efd4bb0e4cc6c1b17d06e *R/forensics.R
+1f5a07755a2b3e4a7d16a3330192ab67 *R/freethefiles.R
+99035412f7b9d2855c8902b6f4556dbb *R/nonprofitexplorer.R
+679d66189545b0b9ed34914790fc7054 *R/ppQuery.R
+ef59ebc6fd021b3a475f85e382b27354 *README.md
+db48d7fb413f3cad8636d84dc6d124fa *inst/CITATION
+6cc8599f09ea8215c84327e2a704d1d7 *man/RPublica-package.Rd
+3bccab4485de4905c7cc0c88f7f29855 *man/committees.Rd
+cbd1bcd675ce48886f0050e6cc36272c *man/filing.Rd
+c8f3387e992b6de55d148dd01a70006b *man/forensics.Rd
+2ae5e96e9021117954c5696ad995504e *man/market.Rd
+3ab10404dd5102917c232ec3d5570ca0 *man/nonprofitexplorer.Rd
+3f3b6e1618c8faca5764f8b232ae0cb6 *man/ppQuery.Rd
+2c8ab81bb40bd87aea72b855200142d8 *man/station.Rd
