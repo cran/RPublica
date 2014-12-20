@@ -37,15 +37,17 @@ The [Nonprofit Explorer API](http://projects.propublica.org/nonprofits/api) func
 
 
 ```r
-library("RPublica")
-str(np_search("propublica"), max = 2)
+library('RPublica')
+str(np_search('propublica'), max=2)
 ```
 
 ```
-## List of 13
-##  $ total_results : num 1
-##  $ filings       :List of 1
-##   ..$ :List of 68
+## List of 14
+##  $ total_results : num 2
+##  $ filings       :List of 2
+##   ..$ :List of 69
+##   ..$ :List of 69
+##  $ num_pages     : num 1
 ##  $ cur_page      : num 0
 ##  $ page_offset   : num 0
 ##  $ per_page      : num 25
@@ -60,7 +62,7 @@ str(np_search("propublica"), max = 2)
 ```
 
 ```r
-str(np_org(142007220), max = 1)
+str(np_org(142007220), max=1)
 ```
 
 ```
@@ -72,40 +74,108 @@ str(np_org(142007220), max = 1)
 ##  $ api_version         : num 1
 ```
 
-
 ### Forensics API ###
 
 The [Forensics API](http://projects.propublica.org/forensics/api) functionality includes two functions: `geos`, to return data for a specific state, and `systems`, to return detailed data and statistics about specified medical examiner (or coroner) system.
 
 
 ```r
-library("RPublica")
+library('RPublica')
 g <- geos()
-str(g[[1]])
+str(g[1:5])
 ```
 
 ```
-## List of 1
-##  $ geo:List of 14
-##   ..$ ar_association_key_name: num 1
-##   ..$ cached_slug            : chr "ak"
-##   ..$ coroner_system         : chr "none"
-##   ..$ created_at             : chr "2011-05-04T12:22:11-04:00"
-##   ..$ district               : NULL
-##   ..$ id                     : num 2
-##   ..$ kind                   : chr "state"
-##   ..$ medical_examiner_system: chr "state"
-##   ..$ name                   : chr "Alaska"
-##   ..$ note                   : NULL
-##   ..$ population             : NULL
-##   ..$ postal_abbreviation    : chr "AK"
-##   ..$ updated_at             : chr "2011-05-04T12:25:09-04:00"
-##   ..$ system_types           : Named chr [1:2] "state" "none"
-##   .. ..- attr(*, "names")= chr [1:2] "medical_examiner_system" "coroner_system"
+## List of 5
+##  $ :List of 1
+##   ..$ geo:List of 14
+##   .. ..$ ar_association_key_name: num 1
+##   .. ..$ cached_slug            : chr "ak"
+##   .. ..$ coroner_system         : chr "none"
+##   .. ..$ created_at             : chr "2011-05-04T12:22:11-04:00"
+##   .. ..$ district               : NULL
+##   .. ..$ id                     : num 2
+##   .. ..$ kind                   : chr "state"
+##   .. ..$ medical_examiner_system: chr "state"
+##   .. ..$ name                   : chr "Alaska"
+##   .. ..$ note                   : NULL
+##   .. ..$ population             : NULL
+##   .. ..$ postal_abbreviation    : chr "AK"
+##   .. ..$ updated_at             : chr "2011-05-04T12:25:09-04:00"
+##   .. ..$ system_types           : Named chr [1:2] "state" "none"
+##   .. .. ..- attr(*, "names")= chr [1:2] "medical_examiner_system" "coroner_system"
+##  $ :List of 1
+##   ..$ geo:List of 14
+##   .. ..$ ar_association_key_name: num 2
+##   .. ..$ cached_slug            : chr "ar"
+##   .. ..$ coroner_system         : chr "county"
+##   .. ..$ created_at             : chr "2011-05-04T12:22:11-04:00"
+##   .. ..$ district               : NULL
+##   .. ..$ id                     : num 5
+##   .. ..$ kind                   : chr "state"
+##   .. ..$ medical_examiner_system: chr "state"
+##   .. ..$ name                   : chr "Arkansas"
+##   .. ..$ note                   : NULL
+##   .. ..$ population             : NULL
+##   .. ..$ postal_abbreviation    : chr "AR"
+##   .. ..$ updated_at             : chr "2011-05-04T12:25:09-04:00"
+##   .. ..$ system_types           : Named chr [1:2] "state" "county"
+##   .. .. ..- attr(*, "names")= chr [1:2] "medical_examiner_system" "coroner_system"
+##  $ :List of 1
+##   ..$ geo:List of 14
+##   .. ..$ ar_association_key_name: num 3
+##   .. ..$ cached_slug            : chr "ct"
+##   .. ..$ coroner_system         : chr "none"
+##   .. ..$ created_at             : chr "2011-05-04T12:22:11-04:00"
+##   .. ..$ district               : NULL
+##   .. ..$ id                     : num 9
+##   .. ..$ kind                   : chr "state"
+##   .. ..$ medical_examiner_system: chr "state"
+##   .. ..$ name                   : chr "Connecticut"
+##   .. ..$ note                   : NULL
+##   .. ..$ population             : NULL
+##   .. ..$ postal_abbreviation    : chr "CT"
+##   .. ..$ updated_at             : chr "2011-05-04T12:25:09-04:00"
+##   .. ..$ system_types           : Named chr [1:2] "state" "none"
+##   .. .. ..- attr(*, "names")= chr [1:2] "medical_examiner_system" "coroner_system"
+##  $ :List of 1
+##   ..$ geo:List of 14
+##   .. ..$ ar_association_key_name: num 4
+##   .. ..$ cached_slug            : chr "de"
+##   .. ..$ coroner_system         : chr "none"
+##   .. ..$ created_at             : chr "2011-05-04T12:22:11-04:00"
+##   .. ..$ district               : NULL
+##   .. ..$ id                     : num 10
+##   .. ..$ kind                   : chr "state"
+##   .. ..$ medical_examiner_system: chr "state"
+##   .. ..$ name                   : chr "Delaware"
+##   .. ..$ note                   : NULL
+##   .. ..$ population             : NULL
+##   .. ..$ postal_abbreviation    : chr "DE"
+##   .. ..$ updated_at             : chr "2011-05-04T12:25:09-04:00"
+##   .. ..$ system_types           : Named chr [1:2] "state" "none"
+##   .. .. ..- attr(*, "names")= chr [1:2] "medical_examiner_system" "coroner_system"
+##  $ :List of 1
+##   ..$ geo:List of 14
+##   .. ..$ ar_association_key_name: num 5
+##   .. ..$ cached_slug            : chr "dc"
+##   .. ..$ coroner_system         : chr "none"
+##   .. ..$ created_at             : chr "2011-05-04T12:22:11-04:00"
+##   .. ..$ district               : NULL
+##   .. ..$ id                     : num 11
+##   .. ..$ kind                   : chr "state"
+##   .. ..$ medical_examiner_system: chr "state"
+##   .. ..$ name                   : chr "District of Columbia"
+##   .. ..$ note                   : NULL
+##   .. ..$ population             : NULL
+##   .. ..$ postal_abbreviation    : chr "DC"
+##   .. ..$ updated_at             : chr "2011-05-04T12:25:09-04:00"
+##   .. ..$ system_types           : Named chr [1:2] "state" "none"
+##   .. .. ..- attr(*, "names")= chr [1:2] "medical_examiner_system" "coroner_system"
 ```
 
 ```r
-str(geos("ny"))
+str(geos('ny'))
 ```
 
 ```
@@ -132,7 +202,7 @@ str(geos("ny"))
 ```
 
 ```r
-str(systems(36), max = 1)
+str(systems(36), max=1)
 ```
 
 ```
@@ -158,19 +228,18 @@ str(systems(36), max = 1)
 ```
 
 
-
 ### Free the Files ###
 
 The [Free the Files API](https://projects.propublica.org/free-the-files/api) functionality includes four functions: `market` (for retrieving available markets, or a specific market), `station` (for retrieving station-specific data`, `committee` (for retrieving sponsoring committees, or a specific such committee), and `filing` (for retrieving details of a specific filing). A codebook describing the values returned by each function is available at: https://projects.propublica.org/free-the-files/api.
 
 
 ```r
-library("RPublica")
-str(market()[1:2])
+library('RPublica')
+str(market()[1:5])
 ```
 
 ```
-## List of 2
+## List of 5
 ##  $ :List of 1
 ##   ..$ market:List of 5
 ##   .. ..$ name          : chr "NEW YORK"
@@ -185,16 +254,37 @@ str(market()[1:2])
 ##   .. ..$ titleized_name: chr "Philadelphia"
 ##   .. ..$ filings_ct    : num 780
 ##   .. ..$ freed_ct      : num 637
+##  $ :List of 1
+##   ..$ market:List of 5
+##   .. ..$ name          : chr "BOSTON (MANCHESTER)"
+##   .. ..$ slug          : chr "boston-manchester"
+##   .. ..$ titleized_name: chr "Boston and Manchester, N.H."
+##   .. ..$ filings_ct    : num 1736
+##   .. ..$ freed_ct      : num 726
+##  $ :List of 1
+##   ..$ market:List of 5
+##   .. ..$ name          : chr "WASHINGTON DC (HAGRSTWN)"
+##   .. ..$ slug          : chr "washington-dc-hagrstwn"
+##   .. ..$ titleized_name: chr "Washington, D.C. and Hagerstown, Md."
+##   .. ..$ filings_ct    : num 988
+##   .. ..$ freed_ct      : num 626
+##  $ :List of 1
+##   ..$ market:List of 5
+##   .. ..$ name          : chr "ATLANTA"
+##   .. ..$ slug          : chr "atlanta"
+##   .. ..$ titleized_name: chr "Atlanta"
+##   .. ..$ filings_ct    : num 5
+##   .. ..$ freed_ct      : num 0
 ```
 
 ```r
-m <- market("new-york")
-s <- station("WEWS-TV")
-str(committee()[1:2])
+m <- market('new-york')
+s <- station('WEWS-TV')
+str(committee()[1:5])
 ```
 
 ```
-## List of 2
+## List of 5
 ##  $ :List of 1
 ##   ..$ committee:List of 4
 ##   .. ..$ gross_amt: NULL
@@ -203,14 +293,32 @@ str(committee()[1:2])
 ##   .. ..$ slug     : chr "planned-parenthood-issue"
 ##  $ :List of 1
 ##   ..$ committee:List of 4
-##   .. ..$ gross_amt: chr "221686816.25"
+##   .. ..$ gross_amt: chr "221716606.25"
 ##   .. ..$ id       : num 1221
 ##   .. ..$ name     : chr "OBAMA FOR AMERICA"
 ##   .. ..$ slug     : chr "obama-for-america"
+##  $ :List of 1
+##   ..$ committee:List of 4
+##   .. ..$ gross_amt: chr "91778107"
+##   .. ..$ id       : num 1220
+##   .. ..$ name     : chr "ROMNEY FOR PRESIDENT"
+##   .. ..$ slug     : chr "romney-for-president"
+##  $ :List of 1
+##   ..$ committee:List of 4
+##   .. ..$ gross_amt: chr "57249945"
+##   .. ..$ id       : num 942
+##   .. ..$ name     : chr "AMERICAN CROSSROADS"
+##   .. ..$ slug     : chr "american-crossroads--2"
+##  $ :List of 1
+##   ..$ committee:List of 4
+##   .. ..$ gross_amt: chr "41675492"
+##   .. ..$ id       : num 3959
+##   .. ..$ name     : chr "RESTORE OUR FUTURE"
+##   .. ..$ slug     : chr "restore-our-future"
 ```
 
 ```r
-ofa <- committee("obama-for-america")
+ofa <- committee('obama-for-america')
 str(filing(51212))
 ```
 
@@ -234,4 +342,3 @@ str(filing(51212))
 ##  $ agency              : Named chr "GREER MARGOLIS MITCHELL"
 ##   ..- attr(*, "names")= chr "name"
 ```
-
